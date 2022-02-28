@@ -1,0 +1,265 @@
+:root {
+  --primary-color: #EFEFEF;
+  --secondary-color: #C0A080;
+  --light-grey: lightgray;
+  --button-color: #11468F;
+  --standard-font-weight: 200;
+}
+
+body {
+  background-color: var(--primary-color);
+  font-family: 'Mukta', sans-serif;
+  font-weight: var(--standard-font-weight);
+  font-size: 20px;
+  line-height: 1.2;
+  height: 100%;
+}
+
+h1 {
+  font-weight: var(--standard-font-weight);
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+a:hover {
+  /* underlining when hovering over a link */
+  text-decoration: underline;
+}
+
+input, textarea, select, button {
+  font-family: system-ui;
+}
+
+.button, button {
+  /* overwrites browser defaults and resets the border */
+  border: none;
+  display: inline-block;
+  /* takes the font from the outer container */
+  font-family: inherit;
+  /* styles the button */
+  background-color: var(--button-color);
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 3px;
+  /* width of the border, type, color */
+  border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+  transition: 0.2s opacity;
+}
+
+button:hover,
+button:focus,
+.button:hover,
+.button:focus {
+  /* lets the mouse appear as a hand when hovering over the button */
+  cursor: pointer;
+  /* reduces the opacity of the button to 80% */
+  opacity: 0.8;
+}
+
+.navigation-list__item--active {
+  text-decoration: underline;
+}
+
+.profile__portrait {
+  float: left;
+  width: 250px;
+  margin-right: 40px;
+  border-radius: 20%;
+}
+
+.profile {
+  max-width: 700px;
+  margin: 25vh auto 25vh auto;
+}
+
+.page-footer {
+  background-color: var(--secondary-color);
+  clear: both;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100px;
+  padding-bottom: 20px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.page-header {
+  display: flex;
+  width: 100%;
+  height: 80px;
+  padding: 0 20px 0 20px;
+  border-bottom: 1px solid var(--light-grey);
+}
+
+.page-header__item {
+  flex: 0 1 200px;
+}
+
+.logo {
+  margin-top: 20px;
+  font-size: 30px;
+}
+
+.logo:hover {
+  text-decoration: none;
+}
+
+.page-header__item:last-child {
+  flex-grow: 1;
+  text-align: right;
+}
+
+.navigation-list {
+  list-style-type: none;
+  margin-top: 30px;
+}
+
+.navigation-list li {
+  display: inline-block;
+  margin-left: 20px;
+}
+
+.grid {
+  display: grid;
+}
+
+.grid__item {
+  background-color: var(--light-grey);
+  padding: 15px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 20px;
+  margin: 15px;
+}
+
+.about {
+  margin: auto;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.about-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.skills-table {
+  text-align: center;
+  margin: 0 auto;
+  margin-bottom: 50px;
+}
+
+table {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.contact-form {
+  text-align: center;
+}
+
+.contact-info {
+  max-width: 350px;
+  margin: auto;
+  padding-top: 50px;
+  height: 30vh;
+}
+
+.contact-info_item1 {
+  float: left;
+}
+
+.contact-info_item2 {
+  float: right;
+}
+
+.berlin-illustration {
+  display: block;
+  width: 500px;
+  margin: 50px auto;
+}
+
+.work_heading {
+  text-align: center;
+}
+
+@keyframes color-change {
+  from {
+    fill: #edc655;
+  }
+
+  to {
+    fill: #f76414;
+  }
+}
+
+@keyframes cloud-move {
+  from {
+    transform: translate(0, 50px);
+  }
+
+  to {
+    transform: translate(200px, 50px);
+  }
+}
+
+@keyframes cloud-move-reverse {
+  from {
+    transform: translate(446px, 48px);
+  }
+
+  to {
+    transform: translate(100px, 48px);
+  }
+}
+
+.sun {
+  animation: 4s color-change infinite alternate linear;
+}
+
+.cloud-front {
+  animation: 30s cloud-move infinite alternate linear;
+}
+
+.cloud-back {
+  animation: 34s cloud-move-reverse infinite alternate linear;
+}
+
+@media all and (max-width: 500px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media all and (min-width: 500px) and (max-width: 750px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media all and (max-width: 750px) {
+  .grid {
+    grid-gap: 10px;
+  }
+
+  .grid__item:last-child {
+    grid-column: auto / auto;
+    grid-row: auto / auto;
+  }
+
+  h1 {
+    font-size: 22px;
+  }
+}
